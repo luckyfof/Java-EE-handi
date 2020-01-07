@@ -10,9 +10,16 @@
 		<table>
 			<c:forEach items="${ subtitles }" var="line" varStatus="status">
 				<tr>
-					<td style="text-align: right;"><c:out value="${ line }" /></td>
-					<td><input type="text" name="line${ status.index }"
-						id="line${ status.index }" size="35" /></td>
+					<c:choose>
+						<c:when
+							test="${ line.matches('-->'+) }">
+							<td style="text-align: right;"><c:out value="${ line }" /></td>
+							<td><input type="text" name="line${ status.index }"
+								id="line${ status.index }" size="35" /></td>
+						</c:when>
+						<c:otherwise>
+						</c:otherwise>
+					</c:choose>
 				</tr>
 			</c:forEach>
 		</table>
