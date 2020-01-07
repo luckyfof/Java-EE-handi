@@ -12,7 +12,7 @@
 				<tr>
 					<c:choose>
 						<c:when
-							test="${ line.matches('-->'+) }">
+							test="${ line.matches('^[0-9]{2}\\\\:[0-9]{2}\\\\:[0-9]{2}\\\\,[0-9]{3}') }">
 							<td style="text-align: right;"><c:out value="${ line }" /></td>
 							<td><input type="text" name="line${ status.index }"
 								id="line${ status.index }" size="35" /></td>
